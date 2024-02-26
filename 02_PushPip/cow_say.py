@@ -25,10 +25,17 @@ parser.add_argument("-n",
                     help="Wrap text configuration.", 
                     action="store_false")
 
+parser.add_argument("-W", 
+                    help="The width of the text bubble.", 
+                    type=int, 
+                    default=40)
+
+
 args = parser.parse_args()
 
 print(cowsay(message=args.text,
              cow=args.f,
              eyes=args.e,
              tongue=args.T,
-             wrap_text=args.n))
+             wrap_text=args.n,
+             width=args.W))
