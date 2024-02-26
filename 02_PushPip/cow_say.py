@@ -21,10 +21,14 @@ parser.add_argument("-T",
                     help="Tongue configuration string.", 
                     default="  ")
 
+parser.add_argument("-n", 
+                    help="Wrap text configuration.", 
+                    action="store_false")
 
 args = parser.parse_args()
 
 print(cowsay(message=args.text,
              cow=args.f,
              eyes=args.e,
-             tongue=args.T))
+             tongue=args.T,
+             wrap_text=args.n))
