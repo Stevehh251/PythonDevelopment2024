@@ -10,15 +10,21 @@ parser.add_argument("text",
                     help="The message.")
 
 parser.add_argument("-f", 
-                    help="Option specifies a particular cow picture file (''cowfile'') to use", 
+                    help="Option specifies a particular cow picture file (''cowfile'') to use.", 
                     default="default")
 
 parser.add_argument("-e", 
                     help="The cow's eyes.", 
                     default="oo")
 
+parser.add_argument("-T", 
+                    help="Tongue configuration string.", 
+                    default="  ")
+
+
 args = parser.parse_args()
 
 print(cowsay(message=args.text,
              cow=args.f,
-             eyes=args.e))
+             eyes=args.e,
+             tongue=args.T))
